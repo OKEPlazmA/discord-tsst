@@ -7,5 +7,5 @@
 "start": "node bot.js" 
 },
 "dependencies": { 
-"discord.js":https://github.com/hydrabolt/discord.js/ "",
+"discord.js": "https://github.com/hydrabolt/discord.js/",
 }
