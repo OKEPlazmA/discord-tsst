@@ -131,12 +131,12 @@ client.on("message",  message => {
       message.channel.send(`${client.user.avatar}`);
       message.channel.send("This is the bot's avatar");
   }
-  if(message.content.startswith(prefix + "sregion")) {
-    let args = message.content.split(" ");
-    let args2 = args[1];
-    message.guild.setRegion(`${args2}`)
-    message.channel.send(`The guild's region has been set to ${args2} by ${message.author.username}.`);
-  }
+//   if(message.content.startswith(prefix + "sregion")) {
+//     let args = message.content.split(" ");
+//     let args2 = args[1];
+//     message.guild.setRegion(`${args2}`)
+//     message.channel.send(`The guild's region has been set to ${args2} by ${message.author.username}.`);
+//   }
   if(message.content.startsWith(prefix + "gid")) {
     message.channel.send(`This is the guild's ID **${message.guild.id}**`);
   }
