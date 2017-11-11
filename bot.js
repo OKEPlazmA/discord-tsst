@@ -127,6 +127,16 @@ client.on("message",  message => {
 
   //  message.channel.send(`${message.createdAt}`)
   }
+  if (message.content.startswith(prefix + "botavatar")) {
+      message.channel.send(`${client.user.avatar}`);
+      message.channel.send("This is the bot's avatar");
+  }
+  if(message.content.startswith(prefix + "sreigon")) {
+    let args = message.content.split(" ");
+    let args2 = args[1];
+    message.guild.setReigon(`${args2}`)
+    message.channel.send(`The guild's region has been set to ${args2} by ${message.author.username}.`);
+  }
   if(message.content.startsWith(prefix + "gid")) {
     message.channel.send(`This is the guild's ID **${message.guild.id}**`);
   }
@@ -209,7 +219,11 @@ client.on("message",  message => {
       .addField("**Usage :: ** --gid" ,
         "**Description :: ** Sends the ID of the guild.")
       .addField("**Usage :: ** --cid" ,
-        "**Description :: ** Sends the ID of the channel.");
+        "**Description :: ** Sends the ID of the channel.")
+      .addField("**Usage :: ** --botavatar" ,
+        "**Description :: ** Sends the avatar of the bot.")
+      .addField("**Usage :: ** --invite" ,
+        "**Description :: ** Gives you an invite link to the bot.");
 
 
     const embed2 = new Discord.RichEmbed()
@@ -221,6 +235,8 @@ client.on("message",  message => {
       .setImage("http://freedomhillcommunitychurch.org/wp-content/uploads/2017/06/Joy-Feater-Image-600x400.png")
       .setThumbnail("https://t3.ftcdn.net/jpg/00/97/06/96/240_F_97069684_nTh5P4Y5JgRrPaJiGhPtOn63ebSJaYrD.jpg")
       .setTimestamp()
+      .addField("**Usage :: ** --sreigon" ,
+        "**Description :: ** Sets à New reigon for the guild.")
       .addField("**Usage :: ** --mute @user",
         "**Description :: ** Mutes a user or bot by their mention.")
       .addField("**Usage :: ** --kick @user" ,
