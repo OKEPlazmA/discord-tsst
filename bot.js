@@ -142,7 +142,7 @@ client.on("message",  message => {
   }
   if(message.content === (prefix + "cid")) {
     message.channel.send(`This is the channel's ID **${message.channel.id}**`);
-    let checkEmoji = message.reactions.emoji.name("white_check_mark");
+    let checkEmoji = message.reactions.emoji("name" , "white_check_mark");
     message.channel.send(checkEmoji);
   }
   if(message.content === (prefix + "cname")) {
