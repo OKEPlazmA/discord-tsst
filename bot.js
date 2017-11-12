@@ -127,7 +127,7 @@ client.on("message",  message => {
 
   //  message.channel.send(`${message.createdAt}`)
   }
-  if (message.content.startswith(prefix + "botavatar")) {
+  if (message.content === (prefix + "botavatar")) {
       message.channel.send(`${client.user.avatar}`);
       message.channel.send("This is the bot's avatar");
   }
@@ -137,18 +137,18 @@ client.on("message",  message => {
 //     message.guild.setRegion(`${args2}`)
 //     message.channel.send(`The guild's region has been set to ${args2} by ${message.author.username}.`);
 //   }
-  if(message.content.startsWith(prefix + "gid")) {
+  if(message.content === (prefix + "gid")) {
     message.channel.send(`This is the guild's ID **${message.guild.id}**`);
   }
-  if(message.content.startsWith(prefix + "cid")) {
+  if(message.content === (prefix + "cid")) {
     message.channel.send(`This is the channel's ID **${message.channel.id}**`);
     let checkEmoji = message.reactions.emoji.find("name" , "white_check_mark");
     message.channel.send(checkEmoji);
   }
-  if(message.content.startsWith(prefix + "cname")) {
+  if(message.content === (prefix + "cname")) {
     message.channel.send(`This is the channel's name **${message.channel.name}**`);
   }
-  if(message.content.startsWith(prefix + "rid")) {
+  if(message.content === (prefix + "rid")) {
     // let messageArray = message.content.split(" ");
     let role = message.guild.roles.find("name", "Management Of CA");
     // let pickRole = messageArray[0];
