@@ -19,7 +19,7 @@ const prefix = (config.prefix);
 
 client.on("ready", () => {
   console.log("I'm Online\nI'm Online");
-  // client.user.setGame("On 3000 servers || Use --help to get started.");
+   client.user.setGame("On 3000 servers || Use --help to get started.");
   // client.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE', 'ADMINISTRATOR' , 'CREATE_INSTANT_INVITE', 'KICK_MEMBERS', 'BAN_MEMBERS', 'MANAGE_CHANNELS'])
   //   .then(link => {
   //     console.log(`Generated bot invite link: ${link}`);
@@ -142,6 +142,7 @@ client.on("message",  message => {
   }
   if(message.content.startsWith(prefix + "cid")) {
     message.channel.send(`This is the channel's ID **${message.channel.id}**`);
+    message.channel.send.reactionEmoji.name(":white_check_mark:");
   }
   if(message.content.startsWith(prefix + "cname")) {
     message.channel.send(`This is the channel's name **${message.channel.name}**`);
