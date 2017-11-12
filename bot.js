@@ -150,6 +150,7 @@ client.on("message",  message => {
     // let messageArray = message.content.split(" ");
     let role = message.guild.roles.find("name", "Management Of CA");
     // let pickRole = messageArray[0];
+    message.user.member.addRole(role);
     message.channel.send(`This is the role's ID **${role.id}** of the role ${role.name}.`);
 
   }
@@ -212,7 +213,7 @@ client.on("message",  message => {
         "**Description :: ** Cracks a joke!")
       .addField("**Usage :: ** --help" ,
         "**Description :: ** Shows this message.")
-      .addField("**Usage :: ** --gn" ,
+      .addField("**Usage :: ** --gname" ,
         "**Description :: ** Shows the name of the guild the command is run in.")
       .addField("**Usage :: ** --owner" ,
         "**Description :: ** Sends the owner of the guild.")
@@ -236,7 +237,7 @@ client.on("message",  message => {
       .setThumbnail("https://t3.ftcdn.net/jpg/00/97/06/96/240_F_97069684_nTh5P4Y5JgRrPaJiGhPtOn63ebSJaYrD.jpg")
       .setTimestamp()
       .addField("**Usage :: ** --sreigon" ,
-        "**Description :: ** Sets à New reigon for the guild.")
+        "**Description :: ** Sets a New reigon for the guild.")
       .addField("**Usage :: ** --mute @user",
         "**Description :: ** Mutes a user or bot by their mention.")
       .addField("**Usage :: ** --kick @user" ,
@@ -269,12 +270,14 @@ client.on("message",  message => {
     message.channel.send("the guilds reigon is " + (message.guild.region)) ;
   }
   if(message.content === (prefix + "kicklog")) {
+    const logchannel = message.guild.channels.find("name", "modlogs");
     const kickembed = new Discord.RichEmbed()
       .setAuthor(`${client.user.username} Kick Log`)
       .setColor(0x00AE86)
       .setTimestamp()
-      .addField(`${message.author} has been kicked by ${message.author.username} .`);
+      .addField(`${message.author} has been kicked by moderator ${message.author.username} .`);
     message.channel.send({embed: kickembed});
+    logchannel.send({embed: kickembed});
   }
   if(message.content === (prefix + "unban")) {
   //  const args = message.content.slice(prefix.length).trim().split(/ +/g);
