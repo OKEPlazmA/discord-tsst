@@ -211,12 +211,12 @@ client.on("message",  message => {
       .setImage("http://freedomhillcommunitychurch.org/wp-content/uploads/2017/06/Joy-Feater-Image-600x400.png")
       .setThumbnail("https://t3.ftcdn.net/jpg/00/97/06/96/240_F_97069684_nTh5P4Y5JgRrPaJiGhPtOn63ebSJaYrD.jpg")
       .setTimestamp()
-      .addField("**Usage :: ** --funny",
+      .addField("**Usage :: ** --joke",
         "**Description :: ** Cracks a joke!")
       .addField("**Usage :: ** --help" ,
-        "**Description :: ** Shows this message.")
-      .addField("**Usage :: ** --gname" ,
-        "**Description :: ** Shows the name of the guild the command is run in.")
+        "**Description :: ** Shows the help message.")
+      .addField("**Usage :: ** --gn" ,
+        "**Description :: ** Shows the name of the guild.")
       .addField("**Usage :: ** --owner" ,
         "**Description :: ** Sends the owner of the guild.")
       .addField("**Usage :: ** --gid" ,
@@ -225,8 +225,35 @@ client.on("message",  message => {
         "**Description :: ** Sends the ID of the channel.")
       .addField("**Usage :: ** --botavatar" ,
         "**Description :: ** Sends the avatar of the bot.")
-      .addField("**Usage :: ** --invite" ,
-        "**Description :: ** Gives you an invite link to the bot.");
+    .addField("**Usage :: ** --invite" ,
+        "**Description :: ** Gives you an invite link to the bot.")
+    .addField("**Usage :: ** --randomcat" ,
+        "**Description :: ** I'll get a random cat image for you!")
+    .addField("**Usage :: ** --catfact" ,
+        "**Description :: ** I'll give you some interesting catfacts!")
+    .addField("**Usage :: ** --colorrole" ,
+        "**Description :: ** Use this to color a role you have!")
+      .addField("**Usage :: ** --rip" ,
+        "**Description :: ** Posts a ripme.xyz link.")
+    .addField("**Usage :: ** --dogfact" ,
+        "**Description :: ** I'll give you some interesting dogfacts!")
+    .addField("**Usage :: ** --fortunecow" ,
+        "**Description :: ** I'll get a random fortunecow!")
+    .addField("**Usage :: ** --gif" ,
+        "**Description :: ** I'll search Giphy for a gif matching your tags.")
+    .addField("**Usage :: ** --hello" ,
+        "**Description :: ** I'll respond to you with hello along with a GitHub link!")
+    .addField("**Usage :: ** --info" ,
+        "**Description :: ** I'll print some information about me.")
+    .addField("**Usage :: ** --randomdog" ,
+        "**Description :: ** I'll get a random doggo image for you!")
+    .addField("**Usage :: ** --prefix" ,
+        "**Description :: ** If you, despite reading this have no clue what my prefix is, I'll tell you!")
+    .addField("**Usage :: ** --server-info" ,
+        "**Description :: ** I'll tell you some information about the server you're currently in.")
+     .addField("**Usage :: ** --say" ,
+        "**Description :: ** Repeat after me.");
+
 
 
     const embed2 = new Discord.RichEmbed()
@@ -247,8 +274,27 @@ client.on("message",  message => {
       .addField("**Usage :: ** --ban @user" ,
         "**Description :: ** Bans a user or bot by their mention.")
       .addField("**Usage :: ** --softban" ,
-        "**Description :: ** Bans and unbans (a) user(s) to delete their messages.");
-
+        "**Description :: ** Bans and unbans (a) user(s) to delete their messages.")
+      .addField("**Usage :: ** --hackban" ,
+        "**Description :: ** Swing the ban hammer on someone who isn't a member of the server!")
+      .addField("**Usage :: ** --leave-server" ,
+        "**Description :: ** I'll leave this server if I am not welcome here.")
+     .addField("**Usage :: ** --namechanges" ,
+        "**Description :: ** I will tell you the name changes for the user you mention.")
+     .addField("**Usage :: ** --purge" ,
+        "**Description :: ** Use this command to delete any amount of message up to 100.")
+     .addField("**Usage :: ** --addrole" ,
+        "**Description :: ** Give a role to user or users.")
+     .addField("**Usage :: ** --customize" ,
+        "**Description :: ** Adjust my behaviour in this server!")
+     .addField("**Usage :: ** --joinserver" ,
+        "**Description :: ** I'll join the server you've requested me to join, as long as the invite is valid and I'm not banned of already in the requested server.")
+     .addField("**Usage :: ** --rankup" ,
+        "**Description :: ** Level up somebody's level by one.")
+     .addField("**Usage :: ** --setnsfw" ,
+        "**Description :: ** This changes if the channel allows NSFW commands.")
+     .addField("**Usage :: ** --setlevel" ,
+        "**Description :: ** This changes the permission level of a user.");
 
 
     message.channel.send({embed});
