@@ -127,6 +127,29 @@ client.on("message",  message => {
 
   //  message.channel.send(`${message.createdAt}`)
   }
+  if (message.content === (prefix + "dog")) {
+    message.channel.send();
+  }
+  if (message.content === (prefix + "dogfact")) {
+    message.channel.send();
+  }
+  if (message.content === (prefix + "cat")) {
+    let urlWithSize = randomCat.get({
+      width: 120,
+      height: 600
+    });
+
+    message.defaultChannel.send(urlWithSize);
+  }
+  if (message.content === (prefix + "catfacts")) {
+    message.channel.send();
+  }
+  if (message.content === (prefix + "dognames")) {
+    message.channel.send();
+  }
+  if (message.content === (prefix + "catnames")) {
+    message.channel.send();
+  }
   if (message.content === (prefix + "botavatar")) {
       message.channel.send(`${client.user.avatar}`);
       message.channel.send("This is the bot's avatar");
