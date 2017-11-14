@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
 // const chalk = require('chalk');
-const randomCat = require('random-cat');
+// const randomCat = require('random-cat');
 const prefix = (config.prefix);
 
 //const modlog = message.guild.channels.find("name" , "modlogs");
@@ -24,11 +24,11 @@ client.on("ready", () => {
    console.log("I'm Online\rI'm Online");
    client.user.setGame("On 3000 servers || Use --help to get started.");
 
-  const error = chalk.bold.red;
-  const warning = chalk.keyword("orange");
+//   const error = chalk.bold.red;
+//   const warning = chalk.keyword("orange");
 
-  console.log(error("Error!"));
-  console.log(warning("Warning!"));
+//   console.log(error("Error!"));
+//   console.log(warning("Warning!"));
   // client.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE', 'ADMINISTRATOR' , 'CREATE_INSTANT_INVITE', 'KICK_MEMBERS', 'BAN_MEMBERS', 'MANAGE_CHANNELS'])
   //   .then(link => {
   //     console.log(`Generated bot invite link: ${link}`);
@@ -143,12 +143,13 @@ client.on("message",  message => {
     message.channel.send();
   }
   if (message.content === (prefix + "cat")) {
-    let urlWithSize = randomCat.get({
-      width: 120,
-      height: 600
-    });
+//     let urlWithSize = randomCat.get({
+//       width: 120,
+//       height: 600
+//     });
 
-    message.defaultChannel.send(urlWithSize);
+//     message.defaultChannel.send(urlWithSize);
+     message.channel.send("This is a cat link");
   }
   if (message.content === (prefix + "catfacts")) {
     message.channel.send();
