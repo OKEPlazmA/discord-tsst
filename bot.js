@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
-const chalk = require('chalk');
+// const chalk = require('chalk');
 const randomCat = require('random-cat');
 const prefix = (config.prefix);
 
@@ -20,7 +20,8 @@ const prefix = (config.prefix);
 //const attach = new Discord.Attachment("anthing","https://pbs.twimg.com/profile_images/804251407582892032/04QaIESj_400x400.jpg");
 
 client.on("ready", () => {
-   console.log(chalk.bold.bgGreenBright("I'm Online\nI'm Online"));
+//    console.log(chalk.bold.bgGreenBright("I'm Online\nI'm Online"));
+   console.log("I'm Online\rI'm Online");
    client.user.setGame("On 3000 servers || Use --help to get started.");
 
   const error = chalk.bold.red;
