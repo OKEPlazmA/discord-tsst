@@ -143,12 +143,12 @@ client.on("message",  message => {
     message.channel.send();
   }
   if (message.content === (prefix + "cat")) {
-//     let urlWithSize = randomCat.get({
-//       width: 120,
-//       height: 600
-//     });
+     let urlWithSize = randomCat.get({
+       width: 120,
+       height: 600
+     });
 
-//     message.defaultChannel.send(urlWithSize);
+     message.defaultChannel.send(urlWithSize);
      message.channel.send("This is a cat link");
   }
   if (message.content === (prefix + "catfacts")) {
@@ -161,8 +161,8 @@ client.on("message",  message => {
     message.channel.send();
   }
   if (message.content === (prefix + "botavatar")) {
-      message.channel.send(`${client.user.avatar}`);
-      message.channel.send("This is the bot's avatar");
+      message.channel.send(`${client.user.avatarURL}`);
+      message.channel.send("This is the bot's avatarURL");
   }
 //   if(message.content.startswith(prefix + "sregion")) {
 //     let args = message.content.split(" ");
