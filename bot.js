@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
+const chalk = require('chalk');
+const randomCat = require('random-cat');
 const prefix = (config.prefix);
 
 //const modlog = message.guild.channels.find("name" , "modlogs");
@@ -18,8 +20,14 @@ const prefix = (config.prefix);
 //const attach = new Discord.Attachment("anthing","https://pbs.twimg.com/profile_images/804251407582892032/04QaIESj_400x400.jpg");
 
 client.on("ready", () => {
-  console.log("I'm Online\nI'm Online");
+   console.log(chalk.bold.bgGreenBright("I'm Online\nI'm Online"));
    client.user.setGame("On 3000 servers || Use --help to get started.");
+
+  const error = chalk.bold.red;
+  const warning = chalk.keyword("orange");
+
+  console.log(error("Error!"));
+  console.log(warning("Warning!"));
   // client.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE', 'ADMINISTRATOR' , 'CREATE_INSTANT_INVITE', 'KICK_MEMBERS', 'BAN_MEMBERS', 'MANAGE_CHANNELS'])
   //   .then(link => {
   //     console.log(`Generated bot invite link: ${link}`);
