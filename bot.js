@@ -181,13 +181,13 @@ client.on("message",  message => {
   if(message.content === (prefix + "cname")) {
     message.channel.send(`This is the channel's name **${message.channel.name}**`);
   }
-  if(message.content.startswith(prefix + "game")) {
+  if(message.content === (prefix + "game")) {
      let args = message.content.split(" ").slice(1);
      let argsresult = args.join(" ");
      
      client.user.setGame(argsresult);
   }
-   if(message.content.startswith(prefix + "status")) {
+   if(message.content === (prefix + "status")) {
      let args = message.content.split(" ").slice(1);
      let argsresult = args.join(" ");
      if(!argsresult) argsresult = "online";
