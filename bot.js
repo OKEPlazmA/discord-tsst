@@ -174,9 +174,9 @@ client.on("message",  message => {
     message.channel.send(`This is the guild's ID **${message.guild.id}**`);
   }
   if(message.content === (prefix + "cid")) {
-    message.channel.send(`This is the channel's ID **${message.channel.id}**`);
-    let checkEmoji = message.reactions.emoji("name" , "white_check_mark");
-    message.channel.send(checkEmoji);
+    message.channel.send(`:white_check_mark: This is the channel's ID **${message.channel.id}**`);
+//     let checkEmoji = message.reactions.emoji("name" , "white_check_mark");
+//     message.channel.send(checkEmoji);
   }
   if(message.content === (prefix + "cname")) {
     message.channel.send(`This is the channel's name **${message.channel.name}**`);
