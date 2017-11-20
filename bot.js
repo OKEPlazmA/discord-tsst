@@ -142,15 +142,15 @@ client.on("message",  message => {
   if (message.content === (prefix + "dogfact")) {
     message.channel.send();
   }
-  if (message.content === (prefix + "cat")) {
-     let urlWithSize = randomCat.get({
-       width: 120,
-       height: 600
-     });
+//   if (message.content === (prefix + "cat")) {
+//      let urlWithSize = randomCat.get({
+//        width: 120,
+//        height: 600
+//      });
 
-     message.defaultChannel.send(urlWithSize);
-     message.channel.send("This is a cat link");
-  }
+//      message.defaultChannel.send(urlWithSize);
+//      message.channel.send("This is a cat link");
+//   }
   if (message.content === (prefix + "catfacts")) {
     message.channel.send();
   }
@@ -181,13 +181,24 @@ client.on("message",  message => {
   if(message.content === (prefix + "cname")) {
     message.channel.send(`This is the channel's name **${message.channel.name}**`);
   }
+  if(message.content.startswith(prefix + "game")) {
+     let args = message.content.split(" ").slice(1);
+     let argsresult = args.join(" ");
+     
+     client.user.setGame(argsresult);
+  }
+   if(message.content.startswith(prefix + "status")) {
+     let args = message.content.split(" ").slice(1);
+     let argsresult = args.join(" ");
+     if(!argsresult) argsresult = "online";
+      client.user.setStatus(argsresult);
+  }
   if(message.content === (prefix + "rid")) {
     // let messageArray = message.content.split(" ");
     let role = message.guild.roles.find("name", "Management Of CA");
     // let pickRole = messageArray[0];
     message.user.member.addRole(role);
     message.channel.send(`This is the role's ID **${role.id}** of the role ${role.name}.`);
-
   }
   if (message.content === (prefix + "invite")) {
     message.channel.send({
