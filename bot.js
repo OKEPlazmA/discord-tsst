@@ -120,16 +120,16 @@ client.on("message",  message => {
   //let args = message.content.split(" ").slice(1);
   if (message.content === (prefix + "ping")) {
     message.channel.send("Ping? 🏓 ").then(m => m.edit(`🏓 Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API latency is ${Math.trunc(client.ping)}ms!`));
-  message.channel.send(":apple:***SONDAGE :apple:\n "+choix1+" ou "+""+choix2+"***")
-            .then(message => message) {
-              message.react("👍")
-              message.react("👎")
-              message.pin()
-              message.delete()
-            }).catch(() {
-              //Something 
-              console.error(error)
-             });
+//   message.channel.send(":apple:***SONDAGE :apple:\n "+choix1+" ou "+""+choix2+"***")
+//             .then(message => message) {
+//               message.react("👍")
+//               message.react("👎")
+//               message.pin()
+//               message.delete()
+//             }).catch(() {
+//               //Something 
+//               console.error(error)
+//              });
   }
   if (message.content === (prefix + "cinvite")) {
     client.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE', 'ADMINISTRATOR' , 'CREATE_INSTANT_INVITE', 'KICK_MEMBERS', 'BAN_MEMBERS', 'MANAGE_CHANNELS'])
