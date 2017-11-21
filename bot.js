@@ -121,13 +121,14 @@ client.on("message",  message => {
   if (message.content === (prefix + "ping")) {
     message.channel.send("Ping? 🏓 ").then(m => m.edit(`🏓 Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API latency is ${Math.trunc(client.ping)}ms!`));
   message.channel.send(":apple:***SONDAGE :apple:\n "+choix1+" ou "+""+choix2+"***")
-            .then(function (message) {
+            .then(message => message) {
               message.react("👍")
               message.react("👎")
               message.pin()
               message.delete()
-            }).catch(function() {
-              //Something
+            }).catch(() {
+              //Something 
+              console.error(error)
              });
   }
   if (message.content === (prefix + "cinvite")) {
@@ -137,6 +138,10 @@ client.on("message",  message => {
         console.log(`Generated bot invite link: ${link}`);
       });
   }
+   if (message.content === "listemojis") {
+  const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
+  message.channel.send(emojiList);
+}
   // if(message.content.startsWith(prefix + "ginvite")) {
   //   client.guild.channel.createInvite(options = {options.maxUses = 0}, "tesitng");
   // }
