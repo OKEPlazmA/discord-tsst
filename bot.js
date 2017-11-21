@@ -217,10 +217,11 @@ client.on("message",  message => {
 // // Remove a role!
 // member.removeRole(role).catch(console.error);
   if(message.content === (prefix + "rid")) {
-    // let messageArray = message.content.split(" ");
+     let member = message.mentions.members.first();
+     //         or
+      let member2 = message.member;
     let role = message.guild.roles.find("name", "Management Of CA");
-    // let pickRole = messageArray[0];
-    message.user.member.addRole(role);
+    member.addRole(role);
     message.channel.send(`This is the role's ID **${role.id}** of the role ${role.name}.`);
   }
   if (message.content === (prefix + "invite")) {
