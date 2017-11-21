@@ -207,6 +207,15 @@ client.on("message",  message => {
      if(!argsresult) argsresult = "online";
       client.user.setStatus(argsresult);
   }
+// let member = message.mentions.members.first();
+
+// // or the person who made the command: let member = message.member;
+
+// // Add the role!
+// member.addRole(role).catch(console.error);
+
+// // Remove a role!
+// member.removeRole(role).catch(console.error);
   if(message.content === (prefix + "rid")) {
     // let messageArray = message.content.split(" ");
     let role = message.guild.roles.find("name", "Management Of CA");
