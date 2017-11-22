@@ -81,16 +81,15 @@ client.on("guildMemberAdd" , member => {
 client.on("messageDelete" , message => {
   const logchannel = message.guild.channels.find("name", "modlogs");
   logchannel.send(message.channel.messageDelete);
-  logchannel.send(`Deleted message !! containing ${message.content.slice(" ").split(0)}.`);
+  logchannel.send(`Deleted message containing :: ````${message.content.slice(" ").split(0)}.`);
   logchannel.send("These messages were successfully deleted!");
   console.log(`message deleted ${message.content.slice(" ")[0]}.`);
 });
 
-// client.on("messageDeleteBulk" , message => {
-//   message.channel.send(message.channel.messageDeleteBulk);
-//   message.channel.send(`Deleted message bulk !! containing ${message.content.slice(" ").split(0)}.`);
-//   console.log("msg bulk");
-// });
+client.on("messageDeleteBulk" , message => {
+  message.channel.send(`Deleted message bulk containing :: ````${message}.```);
+  console.log("msg bulk");
+});
 //Kick this member from the guild.
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -147,7 +146,7 @@ client.on("message",  message => {
   // }
   if (message.content === (prefix + "on")) {
     message.channel.send("i");
-
+   message.react("/assets/f0835a46b501ae0a182874b003fdbb65.svg")
   //  message.channel.send(`${message.createdAt}`)
   }
   if (message.content === (prefix + "dog")) {
