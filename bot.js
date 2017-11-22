@@ -266,9 +266,9 @@ client.on("message",  message => {
   if(message.content === (prefix + "setgame")) {
     //let messageArray = message.content.split(" ");
     //let command = messageArray[0];
-    let args = message.content.slice(" ");
-    let args2 = args.split(1);
-    client.user.setGame(args2);
+//     let args = message.content.slice(" ");
+//     let args2 = args.split(1);
+    client.user.setGame(message.content);
 
   }
   if (message.content === (prefix + "funny")) {
