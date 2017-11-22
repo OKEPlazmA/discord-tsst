@@ -141,6 +141,23 @@ client.on("message",  message => {
   const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
   message.channel.send(emojiList);
 }
+   if (message.content === "warn") {
+    const modRole = message.guild.roles.find("name", "Creator");
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    let reason = args.slice(2).join(" ");
+    let guild = message.guild;
+    if (!message.member.roles.has(modRole.id)) {
+      return message.reply("You dont have permissions to use this command.");
+    }
+    if (message.mentions.users.size === 0) {
+      return message.reply("Please mention a user or a bot.");
+    }
+    let warnMember = message.guild.member(message.mentions.users.first());
+    if (!warnMember) {
+      return message.reply("This is not valid user or bot.");
+    }
+      warnMember.send(`You have been **Warned** in ${guild.name} for ${reason}.`)
+      
   // if(message.content.startsWith(prefix + "ginvite")) {
   //   client.guild.channel.createInvite(options = {options.maxUses = 0}, "tesitng");
   // }
@@ -334,6 +351,8 @@ client.on("message",  message => {
       .setTimestamp()
       .addField("**Usage :: ** --sreigon" ,
         "**Description :: ** Sets a New reigon for the guild.")
+      .addField("**Usage :: ** --warn @user" ,
+        "**Description :: ** Warns a user or bot by their mention.")
       .addField("**Usage :: ** --mute @user",
         "**Description :: ** Mutes a user or bot by their mention.")
       .addField("**Usage :: ** --kick @user" ,
@@ -498,12 +517,12 @@ client.on("message",  message => {
   if(message.content === (prefix + "owner")) {
     message.channel.send(`The owner of **${message.guild.name}** is **${message.guild.owner.user.username}**`);
   }
-  if(message.content === (prefix + "warn")) {
-    const args = message.content.slice(prefix.length).trim().split(/ + /g);
-    const b = message.guild.member(message.mentions.users.first());
-    const f = args.join(2); //gives the command warn only
-    message.channel.send(`${b}  ${f} has been warned by ${message.author}`);
-  }
+//   if(message.content === (prefix + "warn")) {
+//     const args = message.content.slice(prefix.length).trim().split(/ + /g);
+//     const b = message.guild.member(message.mentions.users.first());
+//     const f = args.join(2); //gives the command warn only
+//     message.channel.send(`${b}  ${f} has been warned by ${message.author}`);
+//   }
   if (message.content.startsWith(prefix + "kick")) {
     const modRole = message.guild.roles.find("name", "Creator");
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
